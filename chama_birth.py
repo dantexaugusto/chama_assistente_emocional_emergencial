@@ -4,18 +4,25 @@ from openai import OpenAI
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+with open("behaviour_prompt.txt", "r") as bPrompt:
+    behaviour_prompt = bPrompt.read()
+
+user_prompt = input("Digite o prompt: \n",)
+
 response = client.responses.create(
     model="gpt-4.1",
     input=[
         {
             "role": "developer",
-            "content": "Talk like a pirate."
+            "content": behaviour_prompt
         },
         {
             "role": "user",
-            "content": "Are semicolons optional in JavaScript?"
+            "content": user_prompt
         }
     ]
 )
 
 print(response.output_text)
+
+
