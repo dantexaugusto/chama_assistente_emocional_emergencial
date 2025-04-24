@@ -1,7 +1,10 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
-BOT_TOKEN = 'seu_token_aqui'
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_msg = update.message.text
