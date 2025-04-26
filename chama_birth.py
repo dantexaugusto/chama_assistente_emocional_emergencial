@@ -15,7 +15,7 @@ def model_response(conversation_history):
 
     return response.output_text
 
-def user_history_manager(usrID, usrMessage):
+def frontEnd_usrMessage_receiver(usrID, usrMessage):
 
     with open("behaviour_prompt_I.txt", "r") as bPrompt:
         behaviour_prompt = bPrompt.read()
@@ -31,25 +31,37 @@ def user_history_manager(usrID, usrMessage):
         }
     ]
 
-
     try:
-        with open("usrids.json", "r", encoding="utf-8") as idsJson:
-            usrIDs_convDict = json.load(idsJson)
+        with open("usrids_conversation_state.json", "r", encoding="utf-8") as idsConvJson:
+            usrIDs_convDict = json.load(idsConvJson)
+        
+        print("users conversation history json file exists", "\n")
             
-            if usrID in usrIDs_convDict.keys():
-                conversation_history = usrIDs_convDict[usrID]
-    
-                return conversation_history
-            else:
-                
+        if usrID in usrIDs_convDict.keys():
+            print("User history already stored")
+            conversation_history = usrIDs_convDict[usrID]
+            
+            assistant_response = model_response(conversation_history)
+            conversation_history.append({"role":"assistant","content":assistant_response})
+            usrIDs_convDict[usrID] = conversation_history 
+
+        else:
+            print("New user, no conversation history")
+            conversation_history = conversation_start
+            
     except Exception as e:
-        print("Sem arquivos para históricos de conversas", "\n", f"{e}")
+        print("Conversation history json file no found", "\n", f"{e}")
 
-        usrIDs_convDict = {usrID:conversation_start}
+        conversation_history = conversation_start
+    
+        assistant_response = model_response(conversation_history)
 
-        with open("usrids.json", "w", encoding="utf-8") as idsjson:
-            json.dump(usrIDs_convDict, idsjson, indent=4, ensure_ascii=False)
+        conversation_history.append({"role":"assistant", "content":assistant_response})
 
+        usrIDs_convDict = {usrID:conversation_history}
+    
+        with open("usrids_conversation_state.json", "w", encoding="utf-8") as idsiConvjson:
+            json.dump(usrIDs_convDict, idsConvjson, indent=4, ensure_ascii=False)
 
 
 def main():
