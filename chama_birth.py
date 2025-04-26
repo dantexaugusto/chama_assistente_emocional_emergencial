@@ -15,6 +15,14 @@ def model_response(conversation_history):
 
     return response.output_text
 
+def conversation_history_storage_writer(usrID, conversation_history, usrIDs_convDict):
+
+    assistant_response = model_response(conversation_history)
+    conversation_history.append({"role":"assistant","content":assistant_response})
+    usrIDs_convDict[usrID] = conversation_history 
+    with open("usrids_conversation_state.json", "w", encoding="utf-8") as idsiConvjson:
+        json.dump(usrIDs_convDict, idsConvjson, indent=4, ensure_ascii=False)
+
 def frontEnd_usrMessage_receiver(usrID, usrMessage):
 
     with open("behaviour_prompt_I.txt", "r") as bPrompt:
@@ -44,22 +52,24 @@ def frontEnd_usrMessage_receiver(usrID, usrMessage):
             assistant_response = model_response(conversation_history)
             conversation_history.append({"role":"assistant","content":assistant_response})
             usrIDs_convDict[usrID] = conversation_history 
+            with open("usrids_conversation_state.json", "w", encoding="utf-8") as idsiConvjson:
+                json.dump(usrIDs_convDict, idsConvjson, indent=4, ensure_ascii=False)
 
         else:
             print("New user, no conversation history")
             conversation_history = conversation_start
+            assistant_response = model_response(conversation_history)
+            conversation_history.append({"role":"assistant","content":assistant_response})
+            usrIDs_convDict[usrID] = conversation_history
+
             
     except Exception as e:
         print("Conversation history json file no found", "\n", f"{e}")
 
         conversation_history = conversation_start
-    
         assistant_response = model_response(conversation_history)
-
         conversation_history.append({"role":"assistant", "content":assistant_response})
-
         usrIDs_convDict = {usrID:conversation_history}
-    
         with open("usrids_conversation_state.json", "w", encoding="utf-8") as idsiConvjson:
             json.dump(usrIDs_convDict, idsConvjson, indent=4, ensure_ascii=False)
 
