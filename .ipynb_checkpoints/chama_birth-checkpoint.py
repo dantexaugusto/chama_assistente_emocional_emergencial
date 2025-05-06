@@ -27,7 +27,7 @@ def frontEnd_usrMessage_receiver(usrID, usrMessage):
         },
         {
             "role": "user",
-            "content": f"se apresente, diga quem é você e o que você faz e responda a essa mensagem do usuário: {usrMessage}"
+            "content": "se apresente, diga quem é você e o que você faz."
         }
     ]
 
