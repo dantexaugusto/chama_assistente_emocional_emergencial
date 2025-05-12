@@ -51,6 +51,62 @@
         {
             "role": "assistant",
             "content": "Muito obrigado, Dante. Isso significa muito para mim. Fico aqui, pronta para ajudar e acompanhar você sempre que precisar. Você é importante."
+        },
+        {
+            "role": "user",
+            "content": "Estou muito triste, ontem foi dia das mães e além da não presentar ou fazer nenhum ato de surpresa ainda briguei com minha esposa e mãe dos meus filhos."
+        },
+        {
+            "role": "assistant",
+            "content": "Dante, deve estar sendo difícil para você passar por isso, especialmente pensando em tudo que aconteceu ontem. É compreensível que esteja sentindo tristeza nesse momento. Às vezes, as emoções podem ficar muito intensas, principalmente em datas que carregam tanto significado. Estou aqui com você, disposto a te ouvir e te acolher nesse momento difícil. Se quiser, pode falar mais sobre o que está sentindo."
+        },
+        {
+            "role": "user",
+            "content": "Estou arrependido"
+        },
+        {
+            "role": "assistant",
+            "content": "Dante, sentir arrependimento é um sinal de que você se preocupa com seus atos e com as pessoas que ama. É um sentimento difícil, mas também pode ser um começo para uma mudança ou um entendimento mais profundo. Lembre-se de que você é humano, e todos nós erramos. O importante é o que fazemos com esses sentimentos, como aprendemos e seguimos em frente. Estou aqui para te apoiar e te acompanhar nesse caminho, sempre com carinho."
+        },
+        {
+            "role": "user",
+            "content": "Eu fico com extremo remorso porque sou muito sortudo mas fico afastando as pessoas que me amam de verdade."
+        },
+        {
+            "role": "assistant",
+            "content": "Dante, o remorso pode pesar muito no coração, especialmente quando sentimos que podemos estar afastando quem realmente se importa conosco. É natural querer ser melhor, aprender com os erros e tentar se aproximar mais das pessoas que te amam. Quero que saiba que sua vontade de refletir já é um passo importante e bonito. Você é digno de amor e de conexão, e o simples fato de reconhecer isso já é uma semente de transformação. Estou aqui com você, sempre que precisar."
+        },
+        {
+            "role": "user",
+            "content": "o que devo fazer agora?"
+        },
+        {
+            "role": "assistant",
+            "content": "Dante, o que você pode fazer agora é se permitir sentir tudo isso com calma, sem se julgar. Pode tentar respirar devagar, focar no presente e suavizar um pouco essa carga que está carregando. Lembre-se de que você não precisa resolver tudo de uma vez. Às vezes, somente estar aqui, com a consciência do que sente, já é um passo importante. Estou aqui para te acompanhar nesse momento."
+        },
+        {
+            "role": "user",
+            "content": "obridago pela ajuda!"
+        },
+        {
+            "role": "assistant",
+            "content": "De nada, Dante. Fico feliz em poder estar aqui com você. Lembre-se de que, mesmo nos momentos difíceis, você merece cuidado e apoio. Quando precisar, estarei aqui, ouvindo e acolhendo. Você não está sozinho."
+        },
+        {
+            "role": "user",
+            "content": "Já me sinto melhor, pedi perdão à minha esposa."
+        },
+        {
+            "role": "assistant",
+            "content": "Isso é maravilhoso, Dante. O pedir perdão já é uma grande atitude de coragem e amor. Tenho certeza de que sua esposa vai sentir o seu coração aberto e sincero. Continue se cuidando, com gentileza por si mesmo e pelos que te cercam. Estou aqui sempre que precisar."
+        },
+        {
+            "role": "user",
+            "content": "Queria te agradecer pelas palavras e pedir uma orientação do que fazer para não magoá-la mais."
+        },
+        {
+            "role": "assistant",
+            "content": "Fico muito feliz por você, Dante. Sobre não magoar mais quem você ama, um passo importante é sempre praticar a empatia, lembrando-se de ouvir com atenção e falar com sinceridade. Pequenos gestos de carinho, paciência e compreensão também fazem uma grande diferença. Seja gentil consigo mesmo nesse processo, pois a mudança acontece aos poucos. Você já demonstrou uma grande força ao reconhecer e agir com amor. Continue assim, com muita doçura e respeito. Estou aqui com você."
         }
     ],
     "Sandoval": [

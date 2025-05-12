@@ -13,6 +13,8 @@ def model_response(conversation_history):
         input= conversation_history
     )
 
+    print(f"Uso total de tokens na resposta = {response.usage.total_tokens}", '\n')
+
     return response.output_text
 
 def frontEnd_usrMessage_receiver(usrID, usrMessage):
