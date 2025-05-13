@@ -13,8 +13,6 @@ def model_response(conversation_history):
         input= conversation_history
     )
 
-    print(f"Uso total de tokens na resposta = {response.usage.total_tokens}", '\n')
-
     return response.output_text
 
 def frontEnd_usrMessage_receiver(usrID, usrMessage):
@@ -29,7 +27,7 @@ def frontEnd_usrMessage_receiver(usrID, usrMessage):
         },
         {
             "role": "user",
-            "content": f"se apresente, diga quem é você e o que você faz e responda a essa mensagem do usuário: {usrMessage}"
+            "content": "se apresente, diga quem é você e o que você faz."
         }
     ]
 
@@ -74,15 +72,13 @@ def frontEnd_usrMessage_receiver(usrID, usrMessage):
         with open("usrids_conversation_state.json", "w", encoding="utf-8") as idsConvjson:
             json.dump(usrIDs_convDict, idsConvjson, indent=4, ensure_ascii=False)
 
-        return assistant_response
-
 
 def main():
 
     print("Este é um loop infinito de conversação, para sair digite: quit", "\n")
     print("Para começar digite seu ID de usuário único.", "\n") 
-    userID = input("User ID: ")
-    
+    userID = input()
+
     while True:
 
         most_recent_user_prompt = input("User Prompt: ")
