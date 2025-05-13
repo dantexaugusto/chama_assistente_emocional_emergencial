@@ -74,13 +74,15 @@ def frontEnd_usrMessage_receiver(usrID, usrMessage):
         with open("usrids_conversation_state.json", "w", encoding="utf-8") as idsConvjson:
             json.dump(usrIDs_convDict, idsConvjson, indent=4, ensure_ascii=False)
 
+        return assistant_response
+
 
 def main():
 
     print("Este é um loop infinito de conversação, para sair digite: quit", "\n")
     print("Para começar digite seu ID de usuário único.", "\n") 
-    userID = input()
-
+    userID = input("User ID: ")
+    
     while True:
 
         most_recent_user_prompt = input("User Prompt: ")
